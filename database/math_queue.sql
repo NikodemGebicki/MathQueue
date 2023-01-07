@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Czas generowania: 07 Sty 2023, 15:48
+-- Czas generowania: 07 Sty 2023, 16:12
 -- Wersja serwera: 10.4.27-MariaDB
 -- Wersja PHP: 8.2.0
 
@@ -20,18 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Baza danych: `math_queue`
 --
-
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `administrators`
---
-
-CREATE TABLE `administrators` (
-  `Admin_Id` int(11) NOT NULL,
-  `Username` varchar(50) DEFAULT NULL,
-  `Password` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -86,12 +74,6 @@ CREATE TABLE `users` (
 --
 
 --
--- Indeksy dla tabeli `administrators`
---
-ALTER TABLE `administrators`
-  ADD PRIMARY KEY (`Admin_Id`);
-
---
 -- Indeksy dla tabeli `queue`
 --
 ALTER TABLE `queue`
@@ -121,12 +103,6 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT dla zrzuconych tabel
 --
-
---
--- AUTO_INCREMENT dla tabeli `administrators`
---
-ALTER TABLE `administrators`
-  MODIFY `Admin_Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT dla tabeli `rooms`
