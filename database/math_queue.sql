@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Czas generowania: 05 Sty 2023, 18:24
--- Wersja serwera: 10.4.14-MariaDB
--- Wersja PHP: 7.4.9
+-- Host: localhost
+-- Czas generowania: 07 Sty 2023, 15:41
+-- Wersja serwera: 10.4.27-MariaDB
+-- Wersja PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,7 +31,7 @@ CREATE TABLE `administrators` (
   `Admin_Id` int(11) NOT NULL,
   `Username` varchar(50) DEFAULT NULL,
   `Password` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -42,7 +42,20 @@ CREATE TABLE `administrators` (
 CREATE TABLE `rooms` (
   `Room_Id` int(11) NOT NULL,
   `KeyCode` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `tasks`
+--
+
+CREATE TABLE `tasks` (
+  `Task_Id` int(11) NOT NULL,
+  `Task_Number` int(11) DEFAULT NULL,
+  `Example` varchar(5) DEFAULT NULL,
+  `Room_Id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -55,7 +68,7 @@ CREATE TABLE `users` (
   `Name` varchar(50) DEFAULT NULL,
   `Surname` varchar(50) DEFAULT NULL,
   `Room_Id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indeksy dla zrzutów tabel
@@ -74,6 +87,13 @@ ALTER TABLE `rooms`
   ADD PRIMARY KEY (`Room_Id`);
 
 --
+-- Indeksy dla tabeli `tasks`
+--
+ALTER TABLE `tasks`
+  ADD PRIMARY KEY (`Task_Id`),
+  ADD KEY `Room_Id` (`Room_Id`);
+
+--
 -- Indeksy dla tabeli `users`
 --
 ALTER TABLE `users`
@@ -81,7 +101,7 @@ ALTER TABLE `users`
   ADD KEY `Room_Id` (`Room_Id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT dla zrzuconych tabel
 --
 
 --
@@ -97,8 +117,20 @@ ALTER TABLE `rooms`
   MODIFY `Room_Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT dla tabeli `tasks`
+--
+ALTER TABLE `tasks`
+  MODIFY `Task_Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- Ograniczenia dla zrzutów tabel
 --
+
+--
+-- Ograniczenia dla tabeli `tasks`
+--
+ALTER TABLE `tasks`
+  ADD CONSTRAINT `tasks_ibfk_1` FOREIGN KEY (`Room_Id`) REFERENCES `rooms` (`Room_Id`);
 
 --
 -- Ograniczenia dla tabeli `users`
