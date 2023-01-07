@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Czas generowania: 07 Sty 2023, 15:41
+-- Czas generowania: 07 Sty 2023, 15:48
 -- Wersja serwera: 10.4.27-MariaDB
 -- Wersja PHP: 8.2.0
 
@@ -31,6 +31,17 @@ CREATE TABLE `administrators` (
   `Admin_Id` int(11) NOT NULL,
   `Username` varchar(50) DEFAULT NULL,
   `Password` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `queue`
+--
+
+CREATE TABLE `queue` (
+  `User_Id` int(11) DEFAULT NULL,
+  `Task_Id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -81,6 +92,13 @@ ALTER TABLE `administrators`
   ADD PRIMARY KEY (`Admin_Id`);
 
 --
+-- Indeksy dla tabeli `queue`
+--
+ALTER TABLE `queue`
+  ADD KEY `User_Id` (`User_Id`),
+  ADD KEY `Task_Id` (`Task_Id`);
+
+--
 -- Indeksy dla tabeli `rooms`
 --
 ALTER TABLE `rooms`
@@ -125,6 +143,13 @@ ALTER TABLE `tasks`
 --
 -- Ograniczenia dla zrzutów tabel
 --
+
+--
+-- Ograniczenia dla tabeli `queue`
+--
+ALTER TABLE `queue`
+  ADD CONSTRAINT `queue_ibfk_1` FOREIGN KEY (`User_Id`) REFERENCES `users` (`User_Id`),
+  ADD CONSTRAINT `queue_ibfk_2` FOREIGN KEY (`Task_Id`) REFERENCES `tasks` (`Task_Id`);
 
 --
 -- Ograniczenia dla tabeli `tasks`
