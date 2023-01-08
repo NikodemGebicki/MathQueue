@@ -1,0 +1,33 @@
+Witajcie towarzysze!
+Utworzyłam pare plików, opiszę co tutaj nagrzmociłam i co trzeba dorobić
+Jak wszystko zabangla podmienię css na ładniejsze rzeczy :)
+Jak uważacie że coś w kodzi ejest zbędne to wywalajcie, nie usuwałam już wypisanych rzeczy z webstorma
+
+INDEX.HTML
+tutaj idzie obróbka graficzna, ogarnę to jak zadziała program.
+Join room -> server.html
+Create room -> client.html
+
+SERVER.HTML
+tutaj też obróbka graficzna wleci. 
+Góru matematyki nazywa spobie pokój (np Informatyka stosowana grupa 1) i podaje kodzik, 
+który definiuje ten pokój, więc połączenie sesji trzeba zrobić
+klika prześlij i ląduje w queue_server.html
+
+CLIENT.HTML
+no to tutaj użytkownik podaje kod pokoju (idk czy nazwę też, można tylko po kodzie) oraz nick
+
+QUEUE_CLIENT.HTML
+  - No to na start w {} odniesienie do pokoju, który jest przypisany do kodu
+  - W kolejce wyświetlają się zatwierdzeni ludzie kolejno wraz z zadaniami
+  - Moja deklaracja wyświetla zadeklarowane zadanie. Dałam przycisk na wycofanie się, które zwraca zadanie do puli
+  - w Zadaniach do zrobienia mamy wypisane wszystkie bezpańskie zadania, które czekają aby ktoś je zrobił.
+  - Deklaracje zadania można zrobić albo przez wybór ręczny w "moja deklaracja" albo przez zaznaczenie checkboxa obok listy zadań, temat do dyskusji
+
+QUEUE_SERVER.HTML
+  - Pierw trzeba zrobić zamiast klamry odniesienie do nazwy pokoju (nie wiedziałam czy w htmlu można) 
+  - W sekcji "akceptacja zadania" (propozycja* myślałam żeby dać kolejno "nick" "zadaie" i dwa checkboxy na zatwierdzenie bądź nie udziału w kolejce
+  - Dodaj zadanie to jest tworzenie listy widocznej dla queue_client.html
+  - Aktualnie na tablicy przewija kolejkę (np wyświetlają jej się kolejne 4 osobny, ona ma checkboxa żeby zaznaczyć czy zadanie jest dobrze zrobione, 
+    czy źle (i w tym wypadku zadanie wraca do puli)
+    
