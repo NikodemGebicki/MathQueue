@@ -3,7 +3,9 @@
 using namespace std;
 
 int main(){
-    cout<<"Hello, Kacper!"<<endl;
-
+    for(int i=0; i<5; i++) {
+        cout<<"Hello, Kacper!"<<endl;
+    }
+    
     return 0;
 }
