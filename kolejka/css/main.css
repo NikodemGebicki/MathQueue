@@ -16,35 +16,169 @@ html {
   font-size: 1em;
   line-height: 1.4;
 }
-#first{
-  position: fixed; left: 100px;
-  position: fixed; top: 100px;
-}
-#exercise {
-position: fixed; left: 10cm;
-  position: fixed; top: 100px;
-}
-#accept_ex{
-  position: fixed; left: auto;
-  position: fixed; top: 100px;
-}
-#queue{
-  position: fixed; left: 10cm;
-  position: fixed; top: 350px;
+/* mobilki*/
+@media only screen and (max-width: 600px){
+  #login_guests{
+    scale: 200%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #server{
+    scale: 250%;
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+  }
+  #first{
+    scale: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #exercise {
+    scale: 200%;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+  }
+  #accept_ex{
+    scale: 200%;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+  }
+  #queue{
+    scale: 200%;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+  }
+  #users_in_queue{
+    scale: 200%;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+  }
+  #join_to_queue{
+    scale: 200%;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+  }
+  #my_exercise{
+    scale: 200%;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+  }
+  #server{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 200%;
+    min-width: 200px;
+  }
 }
 
-#users_in_queue{
-  position: fixed; left: 20px;
-  position: fixed; top: 100px;
+
+
+/*pc*/
+@media only screen and (min-width: 601px) {
+  #login_guests{/*klient*/
+    scale: 150%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-35%, -50%);
+  }
+  #server{ /*serwer*/
+    scale: 150%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-5%, -50%);
+  }
+  #first{ /*png jako przyciski*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #exercise {/*dodawanie zadań */
+    scale: 105%;
+    position: absolute;
+    top: 25%;
+    left: 35%;
+    transform: translate(-50%, -67%);
+  }
+  #accept_ex{ /*akceptowanie zadań*/
+    scale: 105%;
+    position: absolute;
+    top: 40%;
+    left: 33%;
+    transform: translate(-30, -50%);
+  }
+  #queue{ /*widok na kolejkę */
+    scale: 105%;
+    position: absolute;
+    top: 12%;
+    left: 10%;
+    transform: translate(-70%, -45%);
+  }
+  #users_in_queue{ /*w kolejce klient*/
+    scale: 105%;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    transform: translate(-50%, -50%);
+  }
+  #join_to_queue{ /*zadanie do zrobienia klient*/
+    scale: 105%;
+    position: absolute;
+    top: 35%;
+    left: 28%;
+    transform: translate(-50%, -50%);
+  }
+  #my_exercise{/*deklaracja zadania klient*/
+    scale: 105%;
+    position: absolute;
+    top: 15%;
+    left: 30%;
+    transform: translate(-50%, -25%);
+  }
+  #server{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 200%;
+    min-width: 200px;
+  }
 }
-#join_to_queue{
-  position: fixed; left: 10cm;
-  position: fixed; top: 250px;
-}
-#my_exercise{
-  position: fixed; left: 10cm;
-  position: fixed; top: 100px;
-}
+
+
+/* Szerokość pola tekstowego na urządzeniach o szerokości ekranu mniejszej niż 600px */
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
 
 ::-moz-selection {
   background: #b3d4fc;
@@ -56,6 +190,10 @@ position: fixed; left: 10cm;
   text-shadow: none;
 }
 
+/*
+ * A better looking default horizontal rule
+ */
+
 hr {
   display: block;
   height: 1px;
@@ -64,6 +202,12 @@ hr {
   margin: 1em 0;
   padding: 0;
 }
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
 
 audio,
 canvas,
@@ -74,20 +218,49 @@ video {
   vertical-align: middle;
 }
 
+/*
+ * Remove default fieldset styles.
+ */
+
 fieldset {
   border: 0;
   margin: 0;
   padding: 0;
 }
 
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
 textarea {
   resize: vertical;
 }
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
 
 .hidden,
 [hidden] {
   display: none !important;
 }
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
 
 .sr-only {
   border: 0;
@@ -102,6 +275,12 @@ textarea {
   /* 1 */
 }
 
+/*
+ * Extends the .sr-only class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
 .sr-only.focusable:active,
 .sr-only.focusable:focus {
   clip: auto;
@@ -113,9 +292,25 @@ textarea {
   width: auto;
 }
 
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
 .invisible {
   visibility: hidden;
 }
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
 
 .clearfix::before,
 .clearfix::after {
@@ -127,6 +322,12 @@ textarea {
   clear: both;
 }
 
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */
 }
@@ -137,6 +338,12 @@ textarea {
   (min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */
 }
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
 
 @media print {
   *,
@@ -162,6 +369,10 @@ textarea {
     content: " (" attr(title) ")";
   }
 
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
   a[href^="#"]::after,
   a[href^="javascript:"]::after {
     content: "";
@@ -177,6 +388,10 @@ textarea {
     page-break-inside: avoid;
   }
 
+  /*
+   * Printing Tables:
+   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
   thead {
     display: table-header-group;
   }
