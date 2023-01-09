@@ -4,7 +4,7 @@ using namespace std;
 
 int main(){
 
-cout<<"Hello to ja Anton"<<endl;
+cout<<"Hello to nie ja Anton"<<endl;
 
 return 0;
 }
