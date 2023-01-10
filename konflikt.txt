@@ -1,1 +1,2 @@
-To tworzy konflikt
+
+To jest inna zawartosc i tworzy konflikt
