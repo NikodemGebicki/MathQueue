@@ -1,0 +1,13 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    link(rel='stylesheet' href='css/normalize.css')
+    link(rel='stylesheet' href='css/main.css')
+    title Stw&oacute;rz pok&oacute;j
+#server
+    form(method='post' action='/host')
+        p Nadaj nazw&eogon; pokoju
+        input(name='room_name' type='text' required='')
+        p Podaj kod pokoju
+        input(name='room_code' type='text' required='')
+        input(type='submit' name='submit')
