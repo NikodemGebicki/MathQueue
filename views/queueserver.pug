@@ -1,0 +1,22 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    link(rel='stylesheet' href='css/normalize.css')
+    link(rel='stylesheet' href='css/main.css')
+    title Pokój prowadzącego
+header
+    h1 Pokój
+nav
+    #accept_ex
+        h2 Akceptacja zadania
+main
+    #exercise
+        form(method="post" action="/addexample")
+            h2  Dodaj zadanie
+            p Numer zadania:
+            input(name="taskNumber" type='number')
+            p Ilość podpunktów:
+            input(name="taskCount" type='number')
+            input(type='submit')
+    #queue
+        h2 Aktualnie na tablicy:

@@ -1,0 +1,11 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    title Dołącz do pokoju
+#login_guests
+    form(method='post' action='/client')
+        p Kod pokoju:
+        input(name="code" type='text')
+        p Nazwa użytkownika:
+        input(name="username" type='text')
+        input(type='submit')
